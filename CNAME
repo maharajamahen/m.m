@@ -1,1 +1,354 @@
-maharaja.mahen
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maharaja Mahen</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(180deg,#050505,#0d0d0d,#000);
+    color:white;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/* background mist */
+body::before{
+    content:'';
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.05), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.03), transparent 30%);
+    animation:fog 12s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes fog{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-40px);
+    }
+}
+
+header{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.role{
+    color:#999;
+    letter-spacing:5px;
+    margin-bottom:10px;
+}
+
+.name{
+    font-family:'Cinzel',serif;
+    font-size:65px;
+    font-weight:700;
+    color:white;
+    text-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #aaa,
+    0 0 70px #777;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 40px #888;
+    }
+    to{
+        text-shadow:
+        0 0 20px #fff,
+        0 0 40px #fff,
+        0 0 80px #ccc;
+    }
+}
+
+.subtitle{
+    margin-top:15px;
+    color:#aaa;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:30px;
+    margin-bottom:25px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(255,255,255,0.15);
+}
+
+.profile{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+.profile img{
+    width:280px;
+    border-radius:20px;
+    border:2px solid rgba(255,255,255,0.15);
+}
+
+.info{
+    flex:1;
+}
+
+.info h2{
+    margin-bottom:15px;
+    color:white;
+}
+
+.info p{
+    color:#cfcfcf;
+    line-height:1.8;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table td{
+    padding:12px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.quote{
+    text-align:center;
+    font-style:italic;
+    color:#ddd;
+    font-size:20px;
+}
+
+footer{
+    text-align:center;
+    color:#777;
+    padding:40px;
+}
+
+/* Notification */
+
+.music-popup{
+    position:fixed;
+    right:-400px;
+    top:40px;
+    width:320px;
+    background:#111;
+    border-left:4px solid white;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 0 30px rgba(255,255,255,0.15);
+    transition:0.8s;
+    z-index:999;
+}
+
+.music-popup.show{
+    right:20px;
+}
+
+.music-popup h4{
+    margin-bottom:8px;
+}
+
+.music-popup a{
+    color:white;
+    text-decoration:none;
+}
+
+.music-popup a:hover{
+    text-decoration:underline;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="role">THE DARK EMPEROR</div>
+
+<h1 class="name">MAHARAJA MAHEN</h1>
+
+<p class="subtitle">
+The Name That Echoes Through The Shadows
+</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+<div class="profile">
+
+<img src="mm.jpg" alt="Lee Heeseung">
+
+<div class="info">
+<h2>Identity</h2>
+
+<p>
+Known by the title <b>Maharaja Mahen</b>, a mysterious ruler who walks between darkness and elegance. His presence commands silence, respect, and curiosity from everyone who crosses his path.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<h2>📜 Character Profile</h2>
+
+<table>
+
+<tr>
+<td>Full Name</td>
+<td>Maharaja Mahen</td>
+</tr>
+
+<tr>
+<td>Face Claim</td>
+<td>Lee Heeseung (Evan)</td>
+</tr>
+
+<tr>
+<td>Title</td>
+<td>The Shadow Emperor</td>
+</tr>
+
+<tr>
+<td>Age</td>
+<td>Unknown</td>
+</tr>
+
+<tr>
+<td>Nationality</td>
+<td>Secret</td>
+</tr>
+
+<tr>
+<td>Personality</td>
+<td>Calm, Elegant, Intelligent, Mysterious</td>
+</tr>
+
+<tr>
+<td>Hobbies</td>
+<td>Observing, Reading, Music, Night Walk</td>
+</tr>
+
+<tr>
+<td>Favorite Color</td>
+<td>Black & Silver</td>
+</tr>
+
+<tr>
+<td>Motto</td>
+<td>"Power is not shown. It is felt."</td>
+</tr>
+
+</table>
+</div>
+
+<div class="card">
+<h2>🖤 About Me</h2>
+
+<p>
+In the darkest corners of the night stands a name whispered with admiration and fear.
+Maharaja Mahen is not merely a person, but a legend wrapped in mystery.
+Silent yet unforgettable.
+Cold yet captivating.
+Every step leaves a story, every glance leaves a memory.
+</p>
+</div>
+
+<div class="card">
+<h2>⚜ Legacy</h2>
+
+<p>
+Many know the face, few know the soul.
+The world sees a king.
+The shadows see their emperor.
+And history remembers the name...
+</p>
+
+<h1 class="name" style="font-size:45px;margin-top:20px;">
+MAHEN
+</h1>
+
+</div>
+
+<div class="card quote">
+"Not every king wears a crown. Some wear darkness itself."
+</div>
+
+</div>
+
+<footer>
+© Maharaja Mahen • All Rights Reserved
+</footer>
+
+<!-- Notification -->
+
+<div class="music-popup" id="musicPopup">
+
+<h4>🎵 Favorite Song</h4>
+
+<p>
+Klik untuk mendengarkan lagu favorit Maharaja Mahen.
+</p>
+
+<br>
+
+<a href="ISI_LINK_YOUTUBE_DISINI" target="_blank">
+▶ Play Music
+</a>
+
+</div>
+<script>
+
+setTimeout(() => {
+
+    const popup = document.getElementById('musicPopup');
+
+    popup.classList.add('show');
+
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 5000);
+
+}, 3000);
+
+</script>
+</body>
+</html>
