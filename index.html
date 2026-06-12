@@ -220,6 +220,71 @@ footer{
     display:none;
     z-index:9999;
 }
+.secret-area{
+    text-align:center;
+    margin:50px 0;
+}
+
+#secretBtn{
+
+    background:white;
+    color:black;
+    border:none;
+
+    padding:15px 40px;
+
+    font-size:18px;
+    font-weight:bold;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    animation:heartbeat 3s infinite;
+}
+
+@keyframes heartbeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    25%{
+        transform:scale(1.12);
+    }
+
+    50%{
+        transform:scale(1);
+    }
+
+    75%{
+        transform:scale(1.12);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+.secret-card{
+
+    display:none;
+
+    max-width:700px;
+
+    margin:30px auto;
+
+    background:rgba(255,255,255,0.05);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:0 0 25px rgba(255,255,255,0.15);
+}
 
 </style>
 </head>
@@ -346,6 +411,31 @@ MAHEN
 <footer>
 © Maharaja Mahen • All Rights Reserved
 </footer>
+<div class="secret-area">
+
+<button id="secretBtn" onclick="openSecret()">
+SECRET
+</button>
+
+</div>
+
+<div id="secretData" class="secret-card">
+
+<h2>🔒 Confidential Information</h2>
+
+<p><b>Owner :</b> Maharaja Mahen</p>
+
+<p><b>TikTok :</b> @username_tiktok</p>
+
+<p><b>Instagram :</b> @username_instagram</p>
+
+<p><b>WhatsApp :</b> +62xxxxxxxxxx</p>
+
+<p><b>Discord :</b> username_discord</p>
+
+<p><b>Status :</b> Access Granted</p>
+
+</div>
 
 <!-- Notification -->
 
@@ -420,7 +510,59 @@ function closePlayer(){
     document.getElementById('ytPlayer').src = "";
 
 }
+let attempts = 0;
 
+function openSecret(){
+
+    if(attempts >= 3){
+
+        alert("❌ Access permanently denied.");
+        return;
+
+    }
+
+    let code = prompt("Enter Secret Code");
+
+    if(code === "m.m"){
+
+        document.getElementById("secretData")
+        .style.display = "block";
+
+        alert("✅ Access Granted");
+
+    }else{
+
+        attempts++;
+
+        let remaining = 3 - attempts;
+
+        if(remaining > 0){
+
+            alert(
+            "❌ Wrong Code\nRemaining Attempts: "
+            + remaining
+            );
+
+        }else{
+
+            alert(
+            "🚫 Access Locked\nMaximum attempts reached."
+            );
+
+            document.getElementById("secretBtn")
+            .disabled = true;
+
+            document.getElementById("secretBtn")
+            .innerText = "LOCKED";
+
+            document.getElementById("secretBtn")
+            .style.opacity = "0.5";
+
+        }
+
+    }
+
+}
 </script>
 </body>
 </html>
