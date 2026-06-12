@@ -191,6 +191,35 @@ footer{
 .music-popup a:hover{
     text-decoration:underline;
 }
+.close-btn{
+    background:none;
+    border:none;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    float:right;
+}
+
+.play-btn{
+    background:white;
+    color:black;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.player-box{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:350px;
+    background:#111;
+    padding:15px;
+    border-radius:15px;
+    display:none;
+    z-index:9999;
+}
 
 </style>
 </head>
@@ -322,20 +351,37 @@ MAHEN
 
 <div class="music-popup" id="musicPopup">
 
+<button class="close-btn" onclick="closeNotif()">✕</button>
+
 <h4>🎵 Favorite Song</h4>
 
-<p>
-Klik untuk mendengarkan lagu favorit Maharaja Mahen.
-</p>
+<p>Music chosen by Maharaja Mahen</p>
 
-<br>
-
-<a href="https://youtu.be/ZRHHOttkM1A?si=bCfqBA8bcoo-A6ef" target="_blank">
+<button onclick="playMusic()" class="play-btn">
 ▶ Play Music
-</a>
+</button>
+
+</div>
+
+<div class="player-box" id="playerBox">
+
+<button class="close-btn" onclick="closePlayer()">✕</button>
+
+<iframe
+id="ytPlayer"
+width="100%"
+height="200"
+src=""
+title="YouTube video player"
+frameborder="0"
+allow="autoplay"
+allowfullscreen>
+</iframe>
 
 </div>
 <script>
+
+const videoID = "https://www.youtube.com/watch?v=pD3WH15qTgc&list=RDpD3WH15qTgc&start_radio=1";
 
 setTimeout(() => {
 
@@ -345,9 +391,35 @@ setTimeout(() => {
 
     setTimeout(() => {
         popup.classList.remove('show');
-    }, 5000);
+    },5000);
 
-}, 3000);
+},3000);
+
+function closeNotif(){
+    document.getElementById('musicPopup')
+    .classList.remove('show');
+}
+
+function playMusic(){
+
+    document.getElementById('playerBox')
+    .style.display = "block";
+
+    document.getElementById('ytPlayer').src =
+    "https://www.youtube.com/embed/" +
+    videoID +
+    "?autoplay=1";
+
+}
+
+function closePlayer(){
+
+    document.getElementById('playerBox')
+    .style.display = "none";
+
+    document.getElementById('ytPlayer').src = "";
+
+}
 
 </script>
 </body>
